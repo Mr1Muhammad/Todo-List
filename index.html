@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="style.css" />
     <title>Todo List</title>
-    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <p>Todo List</p>
+    <div class="to_Grid">
+      <input type="text" class="input_box" placeholder="Todo name">
+      <input type="date" class="js-due-date-input">
+      <button class="button_add js-add-todo-button" onclick="add_tocart();">Add</button>
 
-    <div class="todo-input-grid">
-      <input placeholder="Todo name"
-        class="js-name-input name-input">
-      <input type="date"
-        class="js-due-date-input due-date-input">
-      <button onclick="
-        addTodo();
-      " class="add-todo-button">Add</button>
+
+      <div class="display_toDoList_thing todo_list_grid"></div>
+      
     </div>
-
-    <div class="js-todo-list todo-grid"></div>
-
-    <script src="functionality.js"></script>
+    <script src="toDoList.js"></script>
   </body>
 </html>
