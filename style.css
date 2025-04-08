@@ -1,41 +1,65 @@
-body{
-  font-family: Arial;
-}
-
-.todo-grid,
-.todo-input-grid{
+.to_Grid{
   display: grid;
   grid-template-columns: 200px 150px 100px;
-  column-gap: 10px;
-  row-gap: 10px;
-  align-items: center;
+  column-gap: 7px;
+}
+.display_toDoList_thing{
+  width: 300px;
+  min-height: 30px;
+  margin-top: 20px;
 }
 
-.todo-input-grid{
-  margin-bottom: 10px;
+.todo_list_grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 7px;
+  row-gap: 7px;
 }
-
-.name-input,
-.due-date-input{
-  padding-bottom: 5px;
-  padding-top: 5px;
-  padding-right: 5px;
-  font-size: 15px;
+.input_box{
+  padding: 10px 25px 10px 7px;
+  border: solid gray 1px;
+  border-radius: 5px;
 }
-
-.add-todo-button,
-.delete-todo-button{
-  background-color: rgb(3, 187, 3);
-  color: white;
+.js-due-date-input{
+  padding: 8px;
+  border: solid gray 1px;
+  border-radius: 5px;
+}
+.button_add{
+  padding: 10px 27px 10px 27px;
+  border: solid;
   border: none;
-  padding: 9px 8px 9px 8px;
-  cursor: pointer;
-}
-
-.delete-todo-button{
-  background-color: rgb(165, 16, 16);
+  border-radius: 5px;
   color: white;
+  background-color: green;
+}
+.button_add:hover{
+  opacity: 0.8;
+}
+.button_add:active{
+  opacity: 0.6;
+}
+.nameToDOList{
+  margin: 10px 25px 10px 7px;
+}
+.duedateToDOList{
+  margin: 10px 40px 10px 7px;
+}
+.deleteButton{
+  padding: 10px 27px 10px 27px;
+  border: solid;
   border: none;
-  padding: 9px 8px 9px 8px;
-  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+}
+.button_add:hover{
+  opacity: 0.8;
+}
+.button_add:active{
+  opacity: 0.6;
+}
+.name_text{
+  font-weight: bold;
+  
 }
