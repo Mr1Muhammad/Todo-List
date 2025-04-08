@@ -1,51 +1,49 @@
-const todoList = [{
-  name: 'make dinner',
-  dueDate: '2022-12-22'
-}, {
-  name: 'wash dishes',
-  dueDate: '2022-12-22'
-}];
+const cart = [
+  { name: "Wash dishes", dueDate: '2025-05-22' },
+  { name: "Wash clothes", dueDate: '2025-05-23' }
+];
 
-renderTodoList();
 
-function renderTodoList() {
-  let todoListHTML = '';
-
-  for (let i = 0; i < todoList.length; i++) {
-    const todoObject = todoList[i];
-    //const name = todoObject.name;
-    //const dueDate = todoObject.dueDate;
-    const { name, dueDate } = todoObject;
-    const html = `
-      <div>${name}</div>
-      <div>${dueDate}</div>
-      <button onclick="
-        todoList.splice(${i}, 1);
-        renderTodoList();
-      " class="delete-todo-button">Delete</button> 
-    `;
-    todoListHTML += html;
+document.body.addEventListener("keydown", (event) => {
+  if(event.key === "Enter"){
+    add_tocart();
   }
+  
+});
 
-  document.querySelector('.js-todo-list')
-    .innerHTML = todoListHTML;
-}
-
-function addTodo() {
-  const inputElement = document.querySelector('.js-name-input');
-  const name = inputElement.value;
-
+  function add_tocart(){
+  const textInputStoresHere = document.querySelector('.input_box');
   const dateInputElement = document.querySelector('.js-due-date-input');
+  const name = textInputStoresHere.value;
   const dueDate = dateInputElement.value;
 
-  todoList.push({
+  cart.push({
     //name: name,
-    //dueDate: dueDate,
-    name,
+    //dueDate:dueDate
+    name, 
     dueDate
   });
+  textInputStoresHere.value = '';
+  rederCart();
+  console.log(cart);
+}
 
-  inputElement.value = '';
-
-  renderTodoList();
+function rederCart(){
+  let todoHTML = '';
+  for (let i = 0; i < cart.length; i++){
+    const {name, dueDate} = cart[i];
+    //const name = valuOfitObject.name; etc
+    const capitalizeName = name.toUpperCase();
+    const html = 
+    `
+    <div class="name_text">${capitalizeName}</div> 
+    <div>${dueDate}</div>
+      <button class="deleteButton" onclick="
+        cart.splice(${i}, 1);
+        rederCart();
+      ">Delete</button>
+    `;
+    todoHTML += html;
+  }
+  document.querySelector('.display_toDoList_thing').innerHTML = todoHTML;
 }
